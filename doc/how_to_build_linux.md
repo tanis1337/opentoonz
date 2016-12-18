@@ -23,12 +23,23 @@ $ sudo apt-get install build-essential git cmake pkg-config libboost-all-dev qt5
 Notes:
 * It's possible we also need `libgsl2` (or maybe `libopenblas-dev`)
 
-### Installing Dependencies on RedHat / CentOS
+### Installing Dependencies on RedHat
 
 TODO
+
 ```
 $ rpm ...
 ```
+
+
+
+### Installing Dependencies on CentOS
+(EPEL repo may be needed)
+
+```
+$ yum install qt5-qtbase-devel qt5-qtbase-devel qt5-qtscript-devel qt5-qtscript qt5-qttools qt5-qttools-devel qt5-qtmultimedia-devel qt5-qtsvg qt5-qtsvg-devel blas blas-devel boost boost-devel libGLEW glew-devel libjpeg-turbo-devel lzma lzma-devel lz4 lz4-devel libusb libusb-devel libusbx libusbx-devel freeglut freeglut-devel xz-libs xz-devel SDL2 SDL2-devel libpng libpng-devel SuperLU SuperLU-devel lzo lzo-devel freetype freetype-devel
+```
+
 
 ### Installing Dependencies on Fedora
 (it may include some useless packages)
@@ -113,6 +124,16 @@ $ cd opentoonz/thirdparty/tiff-4.0.3
 $ ./configure --with-pic --disable-jbig
 $ make
 $ cd -
+```
+
+### Building LibPNG (CentOS)
+libPNG 1.6.x is required, right now only 1.5.x are available via yum
+
+```
+$ cd opentoonz/thirdparty/libpng-1.6.21
+$ ./configure
+$ make
+$ make install
 ```
 
 ### Building OpenToonz
